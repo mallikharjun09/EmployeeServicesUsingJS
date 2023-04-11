@@ -1,0 +1,29 @@
+<html>
+      <head>
+            <script src="Employee.js"></script>
+            <script>
+                service = new EmployeeServices()
+	function call(){
+	       name = document.getElementById("name").value
+	       age = document.getElementById("age").value
+	       email = document.getElementById("email").value
+	       phone = document.getElementById("phone").value
+	       service.acceptEmployeeDetails(name,age,email,phone)
+	       result = service.displayEmployeeDetails()
+	       document.getElementById("res").innerHTML = result
+	        document.getElementById("name").value = ""
+	        document.getElementById("age").value = ""
+	        document.getElementById("email").value = ""
+	        document.getElementById("phone").value = ""
+	}
+             </script>
+      </head>
+      <body>
+           <input type="text" placeholder="Name of the Employee" id="name"/><br/>
+           <input type="number" placeholder="Age of the Employee" id="age"/><br/>
+           <input type="email" placeholder="Email of the Employee" id="email"/><br/>
+           <input type="number" placeholder="Phone of the Employee" id="phone"/><br/>
+             <button onclick="call()">Show Data</button><br/>
+            <div id="res"></div>
+      </body>
+</html>
